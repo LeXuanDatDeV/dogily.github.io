@@ -19,6 +19,24 @@ $(document).ready(
       dots: false,
       nav: true,
       navText: ["<img src='./image/icon_pre.png'>", "<img src='./image/icon_next.png'>"],
+      responsiveClass:true,
+      responsive:{
+          0:{
+              items:2,
+          },
+          576:{
+              items:3,
+          },
+          768:{
+            items:4,
+          },
+          992:{
+            items:4,
+          },
+          1000:{
+              items:4,
+          }
+      }
     });
 
   //sticky
@@ -58,5 +76,15 @@ $(document).ready(
   });
 });
 
+//SIDEBAR
 
-
+$(".nav-bar").click(function(){
+  $(".side-nav").css("width","250px");
+})
+$(".closebtn").click(function(){
+  $(".side-nav").css("width","0");
+})
+$('.rotate').click(function() {
+    $(this).toggleClass("down");
+    $(this).next('.nav-sub-menu').slideToggle();
+}); 
